@@ -46,25 +46,33 @@
 							<goal>install-node-and-npm</goal>
 						</goals>
 					</execution>
+
 					<execution>
-						<id>@angular/cli install</id>
+						<id>npm install @angular</id>
 						<goals>
-						<goal>npm</goal>
+							<goal>npm</goal>
 						</goals>
+
 						<configuration>
-						<arguments>install --no-optional -g @angular/cli</arguments>
-						<workingDirectory>${basedir}</workingDirectory>
+							<arguments>install @angular/cli</arguments>
 						</configuration>
 					</execution>
+
+
+
 				</executions>
 				</plugin>
-
 
 
 					<plugin>
 						<artifactId>exec-maven-plugin</artifactId>
 						<groupId>org.codehaus.mojo</groupId>
 						<version>1.4.0</version>
+
+				<configuration>
+					<workingDirectory>${basedir}/src/main/</workingDirectory>
+				</configuration>
+
 						<executions>
 							<execution>
 								<id>angular-cli new app</id>
@@ -77,11 +85,10 @@
 									<arguments>
 										<argument>new</argument>
 										<argument>${appName}-web</argument>
-									</arguments>									
-									<workingDirectory>${basedir}/src/main/</workingDirectory>
+									</arguments>						
 								</configuration>
 							</execution>
-								</executions>
+						</executions>
 						</plugin>
 
 
