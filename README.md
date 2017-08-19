@@ -1,2 +1,2 @@
-# Techathon2017
+# Techathon
 Techathon 2017 on Devops techathon-web...
